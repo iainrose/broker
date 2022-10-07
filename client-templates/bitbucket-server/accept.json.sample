@@ -745,6 +745,72 @@
       }
     },
     {
+      "//": "used to scan Terraform",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*/*.tf",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
+      "//": "used to scan Terraform",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*%2F*.tf",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
+      "//": "used to scan Kubernetes Config",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*/*.yaml",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
+      "//": "used to scan Kubernetes Config",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*%2F*.yaml",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
+      "//": "used to scan Kubernetes Config",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*/*.yml",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
+      "//": "used to scan Kubernetes Config",
+      "method": "GET",
+      "path": "/projects/:project/repos/:repo/browse*%2F*.yml",
+      "origin": "https://${BITBUCKET_API}",
+      "auth": {
+        "scheme": "basic",
+        "username": "${BITBUCKET_USERNAME}",
+        "password": "${BITBUCKET_PASSWORD}"
+      }
+    },
+    {
       "//": "used to check if there's any ignore rules or existing patches",
       "method": "GET",
       "path": "/projects/:project/repos/:repo/browse*/.snyk",
@@ -976,32 +1042,21 @@
       }
     },
     {
+      "//": "needed to load code snippets",
+        "method": "GET",
+        "path": "/projects/:project/repos/:repo/browse*/:file",
+        "origin": "https://${BITBUCKET_API}",
+        "auth": {
+          "scheme": "basic",
+          "username": "${BITBUCKET_USERNAME}",
+          "password": "${BITBUCKET_PASSWORD}"
+        }
+    },
+    {
       "//": "used to redirect requests to snyk git client",
       "method": "any",
       "path": "/snykgit/*",
       "origin": "${GIT_CLIENT_URL}"
-    },
-    {
-      "//": "used to fetch a given repo from API",
-      "method": "GET",
-      "path": "/rest/api/1.0/projects/:project/repos/:repo",
-      "origin": "https://${BITBUCKET}",
-      "auth": {
-        "scheme": "basic",
-        "username": "${BITBUCKET_USERNAME}",
-        "password": "${BITBUCKET_PASSWORD}"
-      }
-    },
-    {
-      "//": "used to get default reviewers for a pull request",
-      "method": "GET",
-      "path": "/rest/default-reviewers/1.0/projects/:projectKey/repos/:repo/reviewers",
-      "origin": "https://${BITBUCKET}",
-      "auth": {
-        "scheme": "basic",
-        "username": "${BITBUCKET_USERNAME}",
-        "password": "${BITBUCKET_PASSWORD}"
-      }
     }
   ]
 }
